@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topoco</title>
+
+    <!-- Main CSS -->
+    <!-- File CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dark-theme.css" />
+    <link rel="stylesheet" href="css/dark-theme.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="container top-nav">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <img src="img/logo-black.png" alt="Topoco Logo" />
+        </a>
+
+        <!-- Search -->
+        <!-- <form action="" class="search">
+          <input type="search" placeholder="Search for products..." />
+          <button type="submit">Search</button>
+        </form> -->
+
+        <!-- Cart -->
+        <div class="cart_header">
+          <div onclick="open_cart()" class="icon_cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="count_item" id="cart-count">0</span>
+          </div>
+          <div class="tottal_price">
+            <p>My Cart:</p>
+            <p class="price_cart_Head" id="cart-total">$0</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVBAR -->
+      <nav>
+        <div class="links container">
+          <i onclick="open_menu()" class="fa-solid fa-bars btn_open_menu"></i>
+          <ul id="menu">
+            <span onclick="close_menu()" class="bg-overlay"></span>
+            <i
+              onclick="close_menu()"
+              class="fa-regular fa-circle-xmark btn_close_menu"
+            ></i>
+            <img class="logo_menu" src="img/logo-black.png" alt="" />
+
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="all_products.html">All Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- CART POPUP -->
+    <div class="cart">
+      <div class="top_cart">
+        <h3>My cart <span class="count_item_cart">(0 Item in Cart)</span></h3>
+        <span onclick="close_cart()" class="close_cart">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </span>
+      </div>
+
+      <div class="items_in_cart"></div>
+
+      <div class="bottom_Cart">
+        <div class="total">
+          <p>Cart subtotal</p>
+          <p class="price_cart_total" id="cart-total-popup">$0</p>
+        </div>
+
+        <div class="button_Cart">
+          <a href="index.html" class="btn_cart">Proceed to Checkout</a>
+          <button onclick="close_cart()" class="btn_cart trans_bg">
+            Shop More
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT DETAIL SECTION -->
+    <section class="product-container container">
+      <div class="product-gallery">
+        <img
+          id="mainImage"
+          src=""
+          alt="Product"
+          class="main-img product-image"
+          style="
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #0001;
+          "
+        />
+      </div>
+
+      <div class="product-details" style="max-width: 500px">
+        <h2
+          class="product-title"
+          style="font-size: 2rem; margin-bottom: 0.5rem"
+        ></h2>
+        <h3
+          class="product-price"
+          data-price=""
+          style="color: #4caf50; font-size: 1.5rem; margin-bottom: 1rem"
+        ></h3>
+
+        <div
+          class="quantity"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+          "
+        >
+          <input
+            id="quantity"
+            type="number"
+            value="1"
+            min="1"
+            style="
+              width: 60px;
+              padding: 6px 10px;
+              border-radius: 6px;
+              border: 1px solid #ccc;
+            "
+          />
+          <button
+            class="add-to-cart-btn"
+            style="
+              background: #fcb900;
+              color: #fff;
+              padding: 10px 28px;
+              border: none;
+              border-radius: 6px;
+              font-size: 1rem;
+              cursor: pointer;
+              transition: background 0.2s;
+              box-shadow: 0 2px 8px #0001;
+            "
+          >
+            Add to Cart <i class="fa-solid fa-cart-plus"></i>
+          </button>
+        </div>
+
+        <div class="product-meta" style="margin-bottom: 1rem">
+          <div class="product-brand" style="font-weight: 500"></div>
+          <div class="product-category" style="font-weight: 500"></div>
+          <div class="product-colors" style="margin: 0.5rem 0"></div>
+        </div>
+
+        <h4 style="margin-bottom: 0.5rem">Product Details</h4>
+        <p class="product-desc" style="color: #444"></p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-container">
+        <!-- Left -->
+        <div class="big_row">
+          <img src="img/logo-white.png" alt="Footer Logo" />
+          <div class="hotline">
+            <i class="fa-solid fa-headset"></i>
+            <div class="text">
+              <h5>Hotline Free 24/24:</h5>
+              <h6>(+100) 123 456 7890</h6>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur.
+          </p>
+        </div>
+
+        <!-- Columns -->
+        <div class="row">
+          <h4>FAQs & Help</h4>
+          <div class="links">
+            <a href="#">F.A.Q.’s</a>
+            <a href="#">Ordering Tracking</a>
+            <a href="#">Contacts</a>
+            <a href="#">Events</a>
+            <a href="#">Help Center</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <h4>Shipping & Delivery</h4>
+          <div class="links">
+            <a href="#">Delivery Information</a>
+            <a href="#">Discount</a>
+            <a href="#">Payment & Shipping</a>
+            <a href="#">Estimated Delivery Time</a>
+            <a href="#">Shipping Guide</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <h4>Information</h4>
+          <div class="links">
+            <a href="#">Popular</a>
+            <a href="#">Our Services</a>
+            <a href="#">Your Account</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Condition</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="bottom_footer">
+        <div class="container">
+          <p>Copyright &copy; <span>Topoco</span>. All rights reserved.</p>
+          <div class="payment_img">
+            <img src="img/payment-1.png" alt="Payment 1" />
+            <img src="img/payment-2.png" alt="Payment 2" />
+            <img src="img/payment-3.png" alt="Payment 3" />
+            <img src="img/payment-4.png" alt="Payment 4" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/cart-ui.js"></script>
+    <script src="js/product-detail.js"></script>
+  </body>
+</html>
